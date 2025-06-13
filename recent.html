@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>편하게 들어와 AI</title>
+  <link rel="stylesheet" href="nav.css">
+  <link rel="stylesheet" href="recent.css">
+
+</head>
+<body>
+
+  <div class="sidebar">
+    <ul>
+      <li><a href="index.html">🏠 홈</a></li>
+      <li><a href="list.html">📋 리스트</a></li>
+      <li><a href="rank.html">📈 랭킹</a></li>
+      <li><a href="recent.html">🕒 최신 AI</a></li>
+      <li>
+        <button id="toggleRecentAI">👀 최근 본 AI</button>
+        <div class="recent-list-wrapper" id="recentBox">
+          <ul id="recentList"></ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="main-wrapper">
+  <div class="main-content">
+    <header>
+      <h2>최신 AI </h2>
+    </header>
+
+
+<div class="latest-section">
+ 
+
+  <div class="latest-list">
+    <!-- 카드 1 -->
+ <a href="Manus.html" onclick="saveRecentlyViewed('Manus (Monica)', 'Manus.html')" class="latest-card" style="text-decoration: none; color: inherit;">
+  <img src="img/manus.png">
+  <div class="text-box">
+    <div class="title">Manus (Monica)</div>
+    <div class="desc">초소형 성능 최적화 모델,<br> 빠른 챗봇 구현에 특화된 미니멀 AI</div>
+  </div>
+</a>
+    <!-- 카드 2 -->
+  <a href="DeepSeek.html" onclick="saveRecentlyViewed('DeepSeek AI', 'DeepSeek.html')" class="latest-card" style="text-decoration: none; color: inherit;">
+  <img src="img/DeepSeek.png">
+  <div class="text-box">
+    <div class="title">DeepSeek AI</div>
+    <div class="desc">중국발 경량 모델 혁신, <br>코드 생성과 문해력에 강한 실속형 AI</div>
+  </div>
+</a>
+
+    <!-- 카드 3 -->
+  <a href="grok3.html" onclick="saveRecentlyViewed('Grok-3', 'grok3.html')" class="latest-card" style="text-decoration: none; color: inherit;">
+  <img src="img/grok3.png">
+  <div class="text-box">
+    <div class="title">Grok-3</div>
+    <div class="desc">X 플랫폼에 최적화된 고속 대화형 AI, <br>실시간 트렌드 분석의 강자</div>
+  </div>
+</a>
+
+    <!-- 카드 4 -->
+   <a href="qwen3.html" onclick="saveRecentlyViewed('Qwen 3 (Alibaba)', 'qwen3.html')" class="latest-card" style="text-decoration: none; color: inherit;">
+  <img src="img/qwen.png" >
+  <div class="text-box">
+    <div class="title">Qwen 3 (Alibaba)</div>
+    <div class="desc">알리바바가 만든 고효율 언어모델, <br>대규모 데이터에도 경량으로 응답</div>
+  </div>
+</a>
+
+    <!-- 카드 5 -->
+    <a href="mistral.html" onclick="saveRecentlyViewed('Mistral AI', 'mistral.html')" class="latest-card" style="text-decoration: none; color: inherit;">
+  <img src="img/mistral.png" >
+  <div class="text-box">
+    <div class="title">Mistral AI</div>
+    <div class="desc">오픈소스계의 다크호스, <br>빠르고 가벼우면서도 높은 정확도를 자랑하는 AI</div>
+  </div>
+</a>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<script>
+   document.addEventListener('DOMContentLoaded', () => {
+    const sidebar = document.querySelector('.sidebar');
+    const toggleBtn = document.createElement('button');
+    toggleBtn.id = 'toggleMenuBtn';
+    toggleBtn.textContent = '≡';
+    sidebar.insertBefore(toggleBtn, sidebar.firstChild);
+
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('collapsed');
+    });
+  });
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggleButton = document.getElementById("toggleRecentAI");
+      const recentBox = document.getElementById("recentBox");
+      toggleButton.addEventListener("click", function () {
+        recentBox.style.display = recentBox.style.display === "block" ? "none" : "block";
+        renderRecentlyViewed();
+      });
+    });
+    function renderRecentlyViewed() {
+      const recentList = document.getElementById("recentList");
+      const viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      if (viewed.length === 0) {
+        recentList.innerHTML = "<li>최근 본 AI가 없습니다.</li>";
+      } else {
+        recentList.innerHTML = viewed.map((item, index) =>
+          `<li><a href="${item.url}" onclick="saveRecentlyViewed('${item.name}', '${item.url}')">${item.name}</a>
+          <button onclick="removeRecentlyViewed(${index})">x</button></li>`
+        ).join("");
+      }
+    }
+    function saveRecentlyViewed(name, url) {
+      let viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      viewed = viewed.filter(item => item.name !== name);
+      viewed.unshift({ name, url });
+      if (viewed.length > 20) viewed = viewed.slice(0, 20);
+      localStorage.setItem("recentAIs", JSON.stringify(viewed));
+    }
+    function removeRecentlyViewed(index) {
+      let viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      viewed.splice(index, 1);
+      localStorage.setItem("recentAIs", JSON.stringify(viewed));
+      renderRecentlyViewed();
+    }
+</script>
+
+</body>
+</html>

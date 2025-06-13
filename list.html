@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>편하게 들어와 AI</title>
+<link rel="stylesheet" href="nav.css">
+<link rel="stylesheet" href="list.css">
+<style>
+
+
+</style>
+</head>
+<body>
+<div class="sidebar">
+  <ul>
+    <li><a href="index.html">🏠 홈</a></li>
+    <li><a href="list.html">📋 리스트</a></li>
+    <li><a href="rank.html">📈 랭킹</a></li>
+    <li><a href="recent.html">🕒 최신 AI</a></li>
+    <li><button id="toggleRecentAI">👀 최근 본 AI</button>
+      <div class="recent-list-wrapper" id="recentBox">
+        <ul id="recentList"></ul>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="main-wrapper">
+<div class="main-content">
+  <header>
+    <h2> AI 리스트 </h2>
+  </header>
+  
+<div class="container">
+<!-- 검색엔진 -->
+<div class="category-box">
+<h3> LLM엔진</h3>
+<ul>
+  <li><a href="gemini.html" onclick="saveRecentlyViewed('Gemini', 'gemini.html')">Gemini AI</a></li>
+  <li><a href="gpt.html" onclick="saveRecentlyViewed('ChatGpt', 'gpt.html')">ChatGpt</a></li>
+  <li><a href="claude.html" onclick="saveRecentlyViewed('Claude', 'claude.html')">Claude</a></li>
+  <li><a href="meta.html" onclick="saveRecentlyViewed('Llama 4 (Meta)', 'meta.html')">Llama 4 (Meta)</a></li>
+  <li><a href="Phind.html" onclick="saveRecentlyViewed('Phind (Phind AI)', 'Phind.html')">Phind (Phind AI)</a></li>
+</ul>
+</div>
+<!-- PPT엔진 -->
+<div class="category-box">
+<h3> PPT엔진</h3>
+<ul>
+  <li><a href="Slides.html" onclick="saveRecentlyViewed('Slides.AI', 'Slides.html')">Slides.AI</a></li>
+  <li><a href="Beautiful.html" onclick="saveRecentlyViewed('Beautiful.AI', 'Beautiful.html')">Beautiful.AI</a></li>
+  <li><a href="Tome.html" onclick="saveRecentlyViewed('Tome AI', 'Tome.html')">Tome AI</a></li>
+  <li><a href="Gamma.html" onclick="saveRecentlyViewed('Gamma', 'Gamma.html')">Gamma</a></li>
+  <li><a href="Canva.html" onclick="saveRecentlyViewed('Canva', 'Canva.html')">Canva</a></li>
+  <li><a href="genspark.html" onclick="saveRecentlyViewed('Genspark.AI', 'genspark.html')">Genspark.AI</a></li>
+</ul>
+</div>
+<!-- 코딩엔진 -->
+<div class="category-box">
+<h3> 코딩엔진</h3>
+<ul>
+  <li><a href="Githubcopilot.html" onclick="saveRecentlyViewed('GitHub Copilot', 'Githubcopilot.html')">GitHub Copilot</a></li>
+  <li><a href="ReplitGhostwriter.html" onclick="saveRecentlyViewed('Replit Ghostwriter', 'ReplitGhostwriter.html')">Replit Ghostwriter</a></li>
+  <li><a href="amazoncodewhisperer.html" onclick="saveRecentlyViewed('Amazon Codewhisperer', 'amazoncodewhisperer.html')">Amazon Codewhisperer</a></li>
+  <li><a href="Tabnine.html" onclick="saveRecentlyViewed('Tabnine', 'Tabnine.html')">Tabnine</a></li>
+  <li><a href="cursor.html" onclick="saveRecentlyViewed('Cursor', 'cursor.html')">Cursor</a></li>
+  <li><a href="Windsurf.html" onclick="saveRecentlyViewed('Windsurf', 'Windsurf.html')">Windsurf</a></li>
+</ul>
+</div>
+<!-- 요약정리엔진 -->
+<div class="category-box">
+<h3> 요약정리엔진</h3>
+<ul>
+  <li><a href="otter.html" onclick="saveRecentlyViewed('Otter.AI', 'otter.html')">Otter.AI</a></li>
+  <li><a href="notta.html" onclick="saveRecentlyViewed('notta', 'notta.html')">notta</a></li>
+  <li><a href="descript.html" onclick="saveRecentlyViewed('descript', 'descript.html')">descript</a></li>
+  <li><a href="fireflies.html" onclick="saveRecentlyViewed('fireflies.AI', 'fireflies.html')">fireflies.AI</a></li>
+  <li><a href="whisper.html" onclick="saveRecentlyViewed('whisper', 'whisper.html')">whisper</a></li>
+</ul>
+</div>
+<div class="category-box">
+<h3> 검색엔진</h3>
+<ul>
+  <li><a href="perplexity.html" onclick="saveRecentlyViewed('Perplexity AI', 'perplexity.html')">Perplexity AI</a></li>
+  <li><a href="You.html" onclick="saveRecentlyViewed('You.com', 'You.html')">You.com</a></li>
+  <li><a href="copilot.html" onclick="saveRecentlyViewed('Copilot', 'copilot.html')">Copilot</a></li>
+  <li><a href="FeloAI.html" onclick="saveRecentlyViewed('Felo AI', 'FeloAI.html')">Felo AI</a></li>
+  <li><a href="DuckDuckGo.html" onclick="saveRecentlyViewed('DuckDuckGo', 'DuckDuckGo.html')">DuckDuckGo</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+  document.body.classList.toggle('sidebar-open');
+  document.addEventListener('DOMContentLoaded', () => {
+    const sidebar = document.querySelector('.sidebar');
+    const toggleBtn = document.createElement('button');
+    toggleBtn.id = 'toggleMenuBtn';
+    toggleBtn.textContent = '≡';
+    sidebar.insertBefore(toggleBtn, sidebar.firstChild);
+
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('collapsed');
+    });
+  });
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggleButton = document.getElementById("toggleRecentAI");
+      const recentBox = document.getElementById("recentBox");
+      toggleButton.addEventListener("click", function () {
+        recentBox.style.display = recentBox.style.display === "block" ? "none" : "block";
+        renderRecentlyViewed();
+      });
+    });
+    function renderRecentlyViewed() {
+      const recentList = document.getElementById("recentList");
+      const viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      if (viewed.length === 0) {
+        recentList.innerHTML = "<li>최근 본 AI가 없습니다.</li>";
+      } else {
+        recentList.innerHTML = viewed.map((item, index) =>
+          `<li><a href="${item.url}" onclick="saveRecentlyViewed('${item.name}', '${item.url}')">${item.name}</a>
+          <button onclick="removeRecentlyViewed(${index})">x</button></li>`
+        ).join("");
+      }
+    }
+    function saveRecentlyViewed(name, url) {
+      let viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      viewed = viewed.filter(item => item.name !== name);
+      viewed.unshift({ name, url });
+      if (viewed.length > 20) viewed = viewed.slice(0, 20);
+      localStorage.setItem("recentAIs", JSON.stringify(viewed));
+    }
+    function removeRecentlyViewed(index) {
+      let viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      viewed.splice(index, 1);
+      localStorage.setItem("recentAIs", JSON.stringify(viewed));
+      renderRecentlyViewed();
+    }
+</script>
+</body>
+</html>

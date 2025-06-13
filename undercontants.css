@@ -1,0 +1,374 @@
+    html {
+      background: url('https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') 
+      center center / cover no-repeat fixed;
+    }
+ 
+    
+  
+    .search-container {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      display: flex;
+      gap: 8px;
+      margin: 0 auto;
+    }
+
+    .search-container input,
+    .search-container button {
+      padding: 10px 16px;
+      font-size: 16px;
+      border: none;
+      background: rgba(255, 255, 255, 0.85);
+      color: #000000;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .search-category-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      margin: 40px auto;
+    }
+    .search-container input {
+      width: 400px;
+    }
+
+
+    .search-container input {
+      width: 400px;
+    }
+    #searchInput {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      color: black;
+      background-color: white;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    #searchInput::placeholder {
+      color: #888;
+    }
+    button[type="submit"] {
+      padding: 10px 16px;
+      font-size: 14px;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      cursor: pointer;
+      writing-mode: horizontal-tb; /* 가로 텍스트 */
+      white-space: nowrap;
+    }
+    #suggestions {
+      list-style: none;
+      padding: 0;
+      margin: 4px 0 0;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      border: 1px solid #ccc;
+      background: white;
+      z-index: 999;
+      max-height: 150px;
+      overflow-y: auto;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 0 0 8px 8px;
+      font-size: 14px;
+      color: black;
+    }
+    #suggestions li {
+      padding: 8px 10px;
+      cursor: pointer;
+    }
+    #suggestions li:hover {
+      background-color: #f0f0f0;
+    }
+
+    
+    body {
+      margin: 0;
+      color: white;
+      font-family: 'Noto Sans KR', sans-serif;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    
+    .main-content {
+      padding: 40px 0;
+      box-sizing: border-box;
+      color: white;
+      max-width: 1200px;
+      width: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .section {
+      margin-top: 40px;
+      width: 100%;
+      max-width: 800px;
+    }
+    
+    .section h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    .section .recommend-card {
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      color: #000;
+      text-decoration: none;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      margin: 0 auto 30px auto;
+    }
+    
+    .section .recommend-card a {
+      color: #000;
+      text-decoration: none;
+    }
+    
+    .section .recommend-card a:visited {
+      color: #000;
+    }
+    
+    .section .recommend-card a:hover {
+      color: #ff6600;
+    }
+    
+    .section .recommend-card img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+    }
+    
+    .section .recommend-card .title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    
+    .section .recommend-card .desc {
+      font-size: 14px;
+      color: #444;
+    }
+    
+    .ai-card-container {
+      justify-content: center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      padding-top: 40px;
+      max-width: 100%;
+    }
+    
+    .ai-card {
+      perspective: 1000px;
+      width: 160px;
+      height: 200px;
+      flex-shrink: 0;
+    }
+    
+    .ai-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    
+    .ai-card:hover .ai-card-inner {
+      transform: rotateY(180deg);
+    }
+    
+    .ai-card-front,
+    .ai-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.9);
+      color: #000;
+      backdrop-filter: blur(8px);
+      text-align: center;
+      box-sizing: border-box;
+    }
+    
+    .ai-card-back {
+      transform: rotateY(180deg);
+      font-size: 13px;
+      padding: 16px;
+    }
+    
+    .ai-card img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+    
+    .ai-card h5 {
+      margin: 0 0 6px;
+      font-size: 14px;
+      color: #333;
+    }
+    
+    .ai-card .label {
+      font-weight: bold;
+      font-size: 15px;
+      color: #000;
+    }
+
+ 
+
+    /* 모달 */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .modal-box {
+      background: white;
+      padding: 24px;
+      border-radius: 16px;
+      width: 320px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+
+    .modal-box h4 {
+      margin-bottom: 12px;
+    }
+
+    .modal-box button {
+      margin-top: 12px;
+      background: #004c99;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+    .section .recommend-card {
+      padding: 24px 28px;
+      display: inline-flex;
+      align-items: center;
+      gap: 24px;
+      max-width: 600px;
+    }
+
+    .section .recommend-card img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+    }
+
+    .section .recommend-card .title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .section .recommend-card .desc {
+      font-size: 14px;
+      color: #444;
+    }
+
+    footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 20px;
+      color: white;
+      font-size: 12px;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+      transform: translateX(3%);
+    }
+ 
+/* 사이드바 열렸을 때 */
+body.sidebar-open .main-wrapper {
+  margin-left: 100px;
+  width: calc(100% - 200px);
+  transform: translateX(-2%);
+  transition: all 0.3s ease;
+}
+
+/* 사이드바 닫혔을 때 */
+body.collapsed .main-wrapper {
+  margin-left: 60px;
+  width: calc(100% - 60px);
+  transform: translateX(-3%);
+  transition: all 0.3s ease;
+
+}
+
+/* 메인 전체 영역 */
+.main-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 0 24px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  transition: margin-left 0.3s ease, width 0.3s ease, transform 0.3s ease;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* 실제 콘텐츠 정렬 */
+.main-content {
+  max-width: 1200px;
+  width: 100%;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.recommend-card,
+.ai-card-container {
+  transition: all 0.3s ease;
+}
+

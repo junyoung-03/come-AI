@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>편하게 들어와 AI - Gemini</title>
+  <link rel="stylesheet" href="nav.css">
+  <link rel="stylesheet" href="listcontants.css">
+</head>
+<body>
+
+  <div class="sidebar">
+    <ul>
+      <li><a href="index.html">🏠 홈</a></li>
+      <li><a href="list.html">📋 리스트</a></li>
+      <li><a href="rank.html">📈 랭킹</a></li>
+      <li><a href="recent.html">🕒 최신 AI</a></li>
+      <li>
+        <button id="toggleRecentAI">👀 최근 본 AI</button>
+        <div class="recent-list-wrapper" id="recentBox">
+          <ul id="recentList"></ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+<div class="link-card">
+  <a href="https://deepmind.google/technologies/gemini/" target="_blank">🔗 Gemini AI 바로가기</a>
+</div>
+
+<div class="tab-menu">
+  <a href="#strength">장점</a>
+  <a href="#weakness">단점</a>
+  <a href="#difference">차별점</a>
+  <a href="#summary">무료/유료 차이 & 요약</a>
+</div>
+
+<div class="content-section">
+  <div class="content-box" id="strength">
+    <h2>장점</h2>
+    <ol>
+      <li><strong>멀티모달 처리 능력:</strong> 텍스트, 이미지, 오디오, 코드 등 다양한 데이터를 동시에 이해하고 생성</li>
+      <li><strong>Google 생태계와의 통합:</strong> Gmail, Docs, Sheets 등과 원활한 통합으로 높은 업무 효율성 제공</li>
+      <li><strong>고급 추론 및 분석 능력:</strong> 논리적, 정밀한 응답과 수학 문제, 코드 분석에 강점</li>
+      <li><strong>빠른 응답 속도:</strong> 경쟁 모델보다 빠른 속도로 실시간 작업에 유리</li>
+      <li><strong>개인화 및 맥락 유지:</strong> 사용자 선호와 이전 대화 맥락 반영</li>
+    </ol>
+  </div>
+
+  <div class="content-box" id="weakness">
+    <h2>단점</h2>
+    <ol>
+      <li><strong>제한된 접근성:</strong> 일부 고급 기능은 유료, 개발자 및 기업 대상 중심</li>
+      <li><strong>높은 학습 곡선:</strong> 복잡한 인터페이스로 초보자에게 진입장벽</li>
+      <li><strong>응답의 정확성 문제:</strong> 일부 응답의 신뢰도 낮거나 부정확할 수 있음</li>
+      <li><strong>비용 문제:</strong> 고급 기능은 월 $19.99 이상의 구독 비용 발생</li>
+      <li><strong>투명성 부족:</strong> 내부 구조 복잡 → 설명 가능성 낮아 신뢰성 이슈 존재</li>
+    </ol>
+  </div>
+
+  <div class="content-box" id="difference">
+    <h2>차별점</h2>
+    <ol>
+      <li><strong> Google Workspace 완전 통합:</strong> 이메일 초안 작성, 문서 요약, 시트 분석 자동 처리</li>
+      <li><strong>진정한 멀티모달 기능:</strong> 텍스트+이미지+코드+음성 동시에 이해 및 응답 가능</li>
+      <li><strong>실시간 웹 기반 정보 업데이트:</strong> Google 검색과 연동된 최신 정보 반영</li>
+      <li><strong>고급 수학 및 코드 추론:</strong> 복잡한 함수 및 구조 분석, DeepMind 기반의 수식 풀이 우수</li>
+      <li><strong>장기 문맥 기억:</strong> Gemini 1.5 Pro는 1백만 토큰 기억 가능 → 긴 대화 유지 가능</li>
+      <li><strong>지리적/언어적 우위:</strong> Google Maps, Translate와 통합 → 위치정보, 다국어 처리 강력</li>
+    </ol>
+  </div>
+
+<div class="content-box" id="summary">
+    <h2>무료/유료 차이</h2>
+
+    <h3>무료 버전</h3>
+    <ul>
+      <li>일상적인 질문, 간단한 문서 작성, 번역, 기본 검색 등에 적합합니다.</li>
+      <li>질문 횟수나 기능에 제한이 있으며, 복잡한 작업이나 고급 기능은 지원하지 않습니다.</li>
+      <li>대체로 AI를 처음 사용하거나, 가벼운 용도로 충분합니다.</li>
+    </ul>
+
+    <h3>유료 버전 (Gemini Advanced/Pro)</h3>
+    <ul>
+      <li>최신 AI 모델(Gemini Ultra)을 기반으로 하여, 더 빠르고 정확한 답변, 긴 문서 요약, 고급 코드 생성, 복잡한 데이터 분석 등 전문가 수준의 작업이 가능합니다.</li>
+      <li>Google Workspace와의 심층 통합, 멀티모달(텍스트, 이미지, 오디오 등) 지원, 신기능 조기 접근 등 확장성이 뛰어납니다.</li>
+      <li>코딩, 데이터 분석, 콘텐츠 생성, 비즈니스 협업 등 고난도 작업에 적합합니다.</li>
+    </ul>
+
+  <h2>요약</h2>
+  <p><strong>Gemini는 "Google 생태계에 최적화된, 멀티모달·실시간 정보 기반의 초지능형 AI"</strong>로 차별화됩니다. 
+    업무 자동화, 데이터 분석, 멀티포맷 이해 능력이 필요한 사용자에게 특히 강력한 도구입니다.</p>
+</div>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const sidebar = document.querySelector('.sidebar');
+  const toggleBtn = document.createElement('button');
+  toggleBtn.id = 'toggleMenuBtn';
+  toggleBtn.textContent = '≡';
+  sidebar.insertBefore(toggleBtn, sidebar.firstChild);
+
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('collapsed');
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+      const toggleButton = document.getElementById("toggleRecentAI");
+      const recentBox = document.getElementById("recentBox");
+      toggleButton.addEventListener("click", function () {
+        recentBox.style.display = recentBox.style.display === "block" ? "none" : "block";
+        renderRecentlyViewed();
+      });
+    });
+    function renderRecentlyViewed() {
+      const recentList = document.getElementById("recentList");
+      const viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      if (viewed.length === 0) {
+        recentList.innerHTML = "<li>최근 본 AI가 없습니다.</li>";
+      } else {
+        recentList.innerHTML = viewed.map((item, index) =>
+          `<li><a href="${item.url}" onclick="saveRecentlyViewed('${item.name}', '${item.url}')">${item.name}</a>
+          <button onclick="removeRecentlyViewed(${index})">x</button></li>`
+        ).join("");
+      }
+    }
+    function saveRecentlyViewed(name, url) {
+      let viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      viewed = viewed.filter(item => item.name !== name);
+      viewed.unshift({ name, url });
+      if (viewed.length > 20) viewed = viewed.slice(0, 20);
+      localStorage.setItem("recentAIs", JSON.stringify(viewed));
+    }
+    function removeRecentlyViewed(index) {
+      let viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      viewed.splice(index, 1);
+      localStorage.setItem("recentAIs", JSON.stringify(viewed));
+      renderRecentlyViewed();
+    }
+</script>
+
+</body>
+</html>

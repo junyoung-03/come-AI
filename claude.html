@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>편하게 들어와 AI</title>
+  <link rel="stylesheet" href="nav.css">
+  <link rel="stylesheet" href="listcontants.css">
+</head>
+
+<body>
+  <div class="sidebar">
+    <ul>
+      <li><a href="index.html">🏠 홈</a></li>
+      <li><a href="list.html">📋 리스트</a></li>
+      <li><a href="rank.html">📈 랭킹</a></li>
+      <li><a href="recent.html">🕒 최신 AI</a></li>
+      <li>
+        <button id="toggleRecentAI">👀 최근 본 AI</button>
+        <div class="recent-list-wrapper" id="recentBox">
+          <ul id="recentList"></ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+ 
+
+<div class="link-card">
+  <a href="https://claude.ai/new" target="_blank">🔗 Claude 바로가기</a>
+</div>
+
+<div class="tab-menu">
+    <a href="#strength">장점</a>
+    <a href="#weakness">단점</a>
+    <a href="#difference">차별점</a>
+    <a href="#free-paid">무료/유료 차이 & 요약 </a>
+</div>
+
+<div class="content-section">
+  <div class="content-box" id="strength">
+    <h2>장점</h2>
+    <ol>
+      <li><strong>높은 안전성 및 윤리성 설계:</strong> Anthropic의 헌법 AI 원칙 기반으로 제작</li>
+      <li><strong>풍부한 대화 이해력:</strong> 맥락 추론 능력이 뛰어나고 장문 응답에도 강함</li>
+      <li><strong>다단계 사고 지원:</strong> 비교, 분석, 요약 등 논리적 작업에 강점을 보임</li>
+      <li><strong>대화 중단 복원 기능:</strong> 이전 대화 흐름을 안정적으로 이어나갈 수 있음</li>
+      <li><strong>협업 친화적 사용 경험:</strong> 공동작업이나 작성 보조에 적합한 톤과 흐름 제공</li>
+    </ol>
+  </div>
+
+  <div class="content-box" id="weakness">
+    <h2>단점</h2>
+    <ol>
+      <li><strong>한국어 정교함 부족:</strong> 영어 대비 번역과 문맥 처리 수준이 낮을 수 있음</li>
+      <li><strong>창의적 생성은 다소 제한:</strong> 이야기 창작이나 유머 대화는 ChatGPT보다 무난함</li>
+      <li><strong>외부 연결 기능 없음:</strong> 브라우저 검색이나 실시간 정보 탐색 미지원</li>
+      <li><strong>플랫폼 제한적:</strong> 현재는 Anthropic 웹사이트나 Claude.ai에서만 사용 가능</li>
+      <li><strong>요금제 가시성 낮음:</strong> 일부 기능은 초대 기반으로만 사용 가능했음</li>
+    </ol>
+  </div>
+
+  <div class="content-box" id="difference">
+    <h2>차별점</h2>
+    <ol>
+      <li><strong>헌법 기반 AI 모델:</strong> 스스로의 원칙에 따라 응답을 조정하는 헌법 기반 설계</li>
+      <li><strong>대화 안전성 최우선:</strong> 편향성, 공격성, 부정확성 최소화를 위한 조정 시스템 도입</li>
+      <li><strong>장문 처리 능력:</strong> Claude 3 Opus는 200K 토큰까지 장기 문서 처리 가능</li>
+      <li><strong>자연스러운 문서 보조:</strong> 이메일, 제안서, 보고서 등 문서 작성에 최적화</li>
+      <li><strong>투명한 AI 철학:</strong> 사용자의 통제권을 중시하는 윤리적 접근 방식 유지</li>
+    </ol>
+  </div>
+
+  <div class="content-box" id="free-paid">
+    <h2>무료/유료 차이 & 요약</h2>
+    <h3>무료 버전</h3>
+    <ul>
+      <li>Claude.ai 접속 시 기본 모델 사용 가능</li>
+      <li>토큰 제한 있음, Opus 모델은 비제공</li>
+      <li>문서 업로드, 요약, 문답 가능</li>
+    </ul>
+    <h3>유료 버전 (Claude Pro)</h3>
+    <ul>
+      <li>Claude 3 Opus 모델 사용 가능</li>
+      <li>월 $20 수준의 구독 요금제</li>
+      <li>긴 문서 처리 및 고급 기능 이용 가능</li>
+      <li>우선 응답 처리, 빠른 속도 제공</li>
+    </ul>
+    <h2>요약</h2>
+  <p>Claude는 Anthropic이 개발한 고성능 대화형 AI로, 안전성과 논리성에 기반한 설계가 특징이며, 문서 작성·요약·질의응답 등 생산성 작업에 특화되어 있는 믿을 수 있는 AI 파트너입니다.</p>
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const sidebar = document.querySelector('.sidebar');
+  const toggleBtn = document.createElement('button');
+  toggleBtn.id = 'toggleMenuBtn';
+  toggleBtn.textContent = '≡';
+  sidebar.insertBefore(toggleBtn, sidebar.firstChild);
+
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('collapsed');
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+      const toggleButton = document.getElementById("toggleRecentAI");
+      const recentBox = document.getElementById("recentBox");
+      toggleButton.addEventListener("click", function () {
+        recentBox.style.display = recentBox.style.display === "block" ? "none" : "block";
+        renderRecentlyViewed();
+      });
+    });
+    function renderRecentlyViewed() {
+      const recentList = document.getElementById("recentList");
+      const viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      if (viewed.length === 0) {
+        recentList.innerHTML = "<li>최근 본 AI가 없습니다.</li>";
+      } else {
+        recentList.innerHTML = viewed.map((item, index) =>
+          `<li><a href="${item.url}" onclick="saveRecentlyViewed('${item.name}', '${item.url}')">${item.name}</a>
+          <button onclick="removeRecentlyViewed(${index})">x</button></li>`
+        ).join("");
+      }
+    }
+    function saveRecentlyViewed(name, url) {
+      let viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      viewed = viewed.filter(item => item.name !== name);
+      viewed.unshift({ name, url });
+      if (viewed.length > 20) viewed = viewed.slice(0, 20);
+      localStorage.setItem("recentAIs", JSON.stringify(viewed));
+    }
+    function removeRecentlyViewed(index) {
+      let viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      viewed.splice(index, 1);
+      localStorage.setItem("recentAIs", JSON.stringify(viewed));
+      renderRecentlyViewed();
+    }
+</script>
+</body>
+</html>

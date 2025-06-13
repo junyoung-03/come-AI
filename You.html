@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>편하게 들어와 AI</title>
+  <link rel="stylesheet" href="nav.css">
+  <link rel="stylesheet" href="listcontants.css">
+</head>
+
+<body>
+  <div class="sidebar">
+    <ul>
+      <li><a href="index.html">🏠 홈</a></li>
+      <li><a href="list.html">📋 리스트</a></li>
+      <li><a href="rank.html">📈 랭킹</a></li>
+      <li><a href="recent.html">🕒 최신 AI</a></li>
+      <li>
+        <button id="toggleRecentAI">👀 최근 본 AI</button>
+        <div class="recent-list-wrapper" id="recentBox">
+          <ul id="recentList"></ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+<div class="link-card">
+  <a href="https://you.com/" target="_blank">🔗 You.com 바로가기</a>
+</div>
+
+<div class="tab-menu">
+    <a href="#strength">장점</a>
+    <a href="#weakness">단점</a>
+    <a href="#difference">차별점</a>
+    <a href="#free-paid">무료/유료 차이 & 요약 </a>
+</div>
+
+<div class="content-section">
+ <div class="content-box" id="strength">
+  <h2>장점 (You.com)</h2>
+    <ol>
+      <li><strong>생성형 AI + 검색 통합:</strong> 요약된 검색 결과와 AI 응답을 함께 제공해 정보 탐색이 빠르고 효율적입니다.</li>
+      <li><strong>개인화된 검색 설정:</strong> Reddit, YouTube, StackOverflow 등 선호 소스를 고정할 수 있어 커스터마이징이 뛰어납니다.</li>
+      <li><strong>앱 기반 결과 UI:</strong> 각 출처별 결과를 블록 형태로 시각화하여 가독성을 높입니다.</li>
+      <li><strong>YouWrite 등 도구 내장:</strong> 작문, 코딩, 요약 등 실무 작업에 바로 활용 가능한 AI 기능이 탑재되어 있습니다.</li>
+      <li><strong>개인정보 보호 중심 정책:</strong> 검색 기록 저장 최소화, 추적 방지 등 프라이버시 보호에 중점을 둡니다.</li>
+    </ol>
+  </div>
+
+  <div class="content-box" id="weakness-you">
+    <h2>단점 (You.com)</h2>
+    <ol>
+      <li><strong>한국어 지원 미흡:</strong> 비영어권 환경에서는 AI 응답 정확도가 떨어질 수 있습니다.</li>
+      <li><strong>전문 검색 정확도 낮음:</strong> 특정 키워드나 기술 분야 검색 품질은 전통 검색 엔진보다 부족할 수 있습니다.</li>
+      <li><strong>출처 명확성 부족:</strong> 요약 응답의 출처가 불명확하거나 섞인 경우가 있어 팩트 체크가 필요합니다.</li>
+      <li><strong>초보자용 인터페이스 난이도:</strong> 앱 기반 결과 UI가 직관적이지만 초보자에겐 복잡해 보일 수 있습니다.</li>
+      <li><strong>모바일 앱 완성도 낮음:</strong> 웹에 비해 모바일 앱 기능과 안정성은 미흡한 편입니다.</li>
+    </ol>
+  </div>
+
+  <div class="content-box" id="difference-you">
+    <h2>차별점 (You.com)</h2>
+    <ol>
+      <li><strong>앱 형태 결과 시각화:</strong> 뉴스, Reddit 등 출처별로 결과를 구분해 시각적 탐색이 용이합니다.</li>
+      <li><strong>개인 맞춤형 검색 경험:</strong> 자주 쓰는 소스를 고정해 나만의 검색 환경을 구성할 수 있습니다.</li>
+      <li><strong>다기능 통합 도구 제공:</strong> YouChat, YouWrite, YouCode 등 생성형 작업을 검색창 하나로 해결 가능합니다.</li>
+      <li><strong>프라이버시 강화:</strong> 검색 내역 비저장, 추적 최소화 등 사용자의 정보 보호를 우선시합니다.</li>
+      <li><strong>멀티모달 응답:</strong> 요약된 정보와 원문 링크를 함께 제공하여 탐색과 활용을 동시에 만족시킵니다.</li>
+    </ol>
+  </div>
+<div class="content-box" id="free-paid">
+<h2>무료/유료 차이 요약</h2>
+
+<h3>무료 버전</h3>
+<ul>
+  <li>기본 AI 모델(YouChat) 사용 – 일상 검색과 간단한 생성 작업에 적합</li>
+  <li>일부 생성형 기능(YouWrite, YouCode 등) 제한적으로 제공</li>
+  <li>트래픽에 따라 속도 저하나 사용량 제한 발생 가능</li>
+  <li>출처 제공과 요약 기능이 간단하거나 축약된 형태로 제공됨</li>
+  <li>광고가 포함되어 있으며 일부 고급 기능(PDF, 이미지 생성 등) 미지원</li>
+  <li>일반 사용자, 가벼운 검색 및 생성 작업에 적합</li>
+</ul>
+
+<h3>유료 버전 (You.com Pro)</h3>
+<ul>
+  <li>GPT-4, Claude 3, Mistral 등 고급 AI 모델 선택 가능</li>
+  <li>YouWrite, YouCode 등 생성형 기능을 무제한으로 활용 가능</li>
+  <li>빠른 응답 속도와 더 정밀한 검색 결과 제공</li>
+  <li>긴 텍스트 요약, 상세 출처 제공 등 고급 정보 정리 기능 지원</li>
+  <li>광고 없이 깔끔한 인터페이스, PDF·CSV 분석 및 이미지 생성 기능 포함</li>
+  <li>전문가, 개발자, 파워 유저, 비즈니스 사용자에게 적합</li>
+</ul>
+
+
+  <h2>요약</h2>
+<P><strong>You.com은</strong> 생성형 AI와 검색을 통합한 플랫폼으로,
+   <strong>개인화된 시각화 검색 경험</strong>과 <strong>다양한 생성 기능</strong>을 제공하며, <strong>프라이버시를 중시하는 사용자</strong>에게 적합한 대안 검색 도구입니다.</P>
+</div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const sidebar = document.querySelector('.sidebar');
+  const toggleBtn = document.createElement('button');
+  toggleBtn.id = 'toggleMenuBtn';
+  toggleBtn.textContent = '≡';
+  sidebar.insertBefore(toggleBtn, sidebar.firstChild);
+
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('collapsed');
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+      const toggleButton = document.getElementById("toggleRecentAI");
+      const recentBox = document.getElementById("recentBox");
+      toggleButton.addEventListener("click", function () {
+        recentBox.style.display = recentBox.style.display === "block" ? "none" : "block";
+        renderRecentlyViewed();
+      });
+    });
+    function renderRecentlyViewed() {
+      const recentList = document.getElementById("recentList");
+      const viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      if (viewed.length === 0) {
+        recentList.innerHTML = "<li>최근 본 AI가 없습니다.</li>";
+      } else {
+        recentList.innerHTML = viewed.map((item, index) =>
+          `<li><a href="${item.url}" onclick="saveRecentlyViewed('${item.name}', '${item.url}')">${item.name}</a>
+          <button onclick="removeRecentlyViewed(${index})">x</button></li>`
+        ).join("");
+      }
+    }
+    function saveRecentlyViewed(name, url) {
+      let viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      viewed = viewed.filter(item => item.name !== name);
+      viewed.unshift({ name, url });
+      if (viewed.length > 20) viewed = viewed.slice(0, 20);
+      localStorage.setItem("recentAIs", JSON.stringify(viewed));
+    }
+    function removeRecentlyViewed(index) {
+      let viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      viewed.splice(index, 1);
+      localStorage.setItem("recentAIs", JSON.stringify(viewed));
+      renderRecentlyViewed();
+    }
+</script>
+</body>
+</html>

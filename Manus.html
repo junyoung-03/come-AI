@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>편하게 들어와 AI</title>
+  <link rel="stylesheet" href="nav.css">
+  <link rel="stylesheet" href="listcontants.css">
+</head>
+
+<body>
+  <div class="sidebar">
+    <ul>
+      <li><a href="index.html">🏠 홈</a></li>
+      <li><a href="list.html">📋 리스트</a></li>
+      <li><a href="rank.html">📈 랭킹</a></li>
+      <li><a href="recent.html">🕒 최신 AI</a></li>
+      <li>
+        <button id="toggleRecentAI">👀 최근 본 AI</button>
+        <div class="recent-list-wrapper" id="recentBox">
+          <ul id="recentList"></ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+<div class="link-card">
+  <a href="https://manus.im/guest" target="_blank">🔗 Manus (Monica) 바로가기</a>
+</div>
+
+<div class="tab-menu">
+    <a href="#strength">장점</a>
+    <a href="#weakness">단점</a>
+    <a href="#difference">차별점</a>
+    <a href="#free-paid">무료/유료 차이 & 요약 </a>
+</div>
+
+<div class="content-section">
+   <div class="content-box" id="strength">
+    <h2>장점</h2>
+    <ol>
+      <li><strong>영상 중심 AI:</strong> 짧은 동영상 자동 편집 및 콘텐츠 제작에 최적화</li>
+      <li><strong>대본 자동 생성:</strong> 키워드 입력만으로 짜임새 있는 대본 제작 가능</li>
+      <li><strong>자막, 음성, 이미지 자동 처리:</strong> 영상에 필요한 모든 구성요소를 AI가 자동 생성</li>
+      <li><strong>짧은 시간에 완성:</strong> 1분 미만의 숏폼 콘텐츠를 몇 분 내로 제작 가능</li>
+      <li><strong>모바일 친화적 UX:</strong> 사용이 직관적이며 초보자도 쉽게 접근 가능</li>
+    </ol>
+  </div>
+
+  <div class="content-box" id="weakness">
+    <h2>단점</h2>
+    <ol>
+      <li><strong>콘텐츠 유형 제한:</strong> 주로 숏폼, 홍보 영상 중심이라 긴 영상에는 부적합</li>
+      <li><strong>커스터마이징 한계:</strong> 세부 시나리오나 장면 전환 조정은 제한적</li>
+      <li><strong>템플릿 의존성:</strong> 결과물이 정형화되기 쉬워 독창성 확보가 어려움</li>
+      <li><strong>고급 영상 편집 기능 부족:</strong> 전문 편집 툴 대비 기능 제약 있음</li>
+      <li><strong>한국어 음성 품질 보완 필요:</strong> 일부 음성 합성 결과가 어색할 수 있음</li>
+    </ol>
+  </div>
+
+  <div class="content-box" id="difference">
+    <h2>차별점</h2>
+    <ol>
+      <li><strong>영상 제작 전용 AI:</strong> 텍스트 기반 생성형 AI와 달리 영상 중심으로 특화</li>
+      <li><strong>모바일 제작 친화성:</strong> 모바일 환경에서 빠르게 숏폼 콘텐츠 완성 가능</li>
+      <li><strong>1인 마케팅/셀러 대상 최적화:</strong> 인스타그램, 쇼츠, 틱톡 마케팅에 적합</li>
+      <li><strong>음성+자막+이미지 일괄 생성:</strong> 시청각 요소를 AI가 통합 생성</li>
+      <li><strong>짧은 제작 시간:</strong> 복잡한 편집 없이 자동으로 빠르게 영상 완성</li>
+    </ol>
+  </div>
+
+  <div class="content-box" id="free-paid">
+    <h2>무료/유료 차이 & 요약</h2>
+    <h3>무료 버전</h3>
+    <ul>
+      <li>일일 생성 횟수 제한 (예: 하루 3개 영상까지)</li>
+      <li>기본 템플릿 및 기본 음성만 제공</li>
+      <li>로고 삽입, 고화질 출력 제한</li>
+    </ul>
+    <h3>유료 버전 (Manus Pro)</h3>
+    <ul>
+      <li>무제한 영상 생성, 고화질 다운로드 제공</li>
+      <li>상업적 사용 및 브랜드 커스터마이징 가능</li>
+      <li>고급 템플릿, 다양한 음성 스타일 제공</li>
+      <li>브랜드 로고 삽입, CTA(콜투액션) 버튼 설정 가능</li>
+    </ul>
+    <h2>요약</h2>
+  <p> Manus는 마케팅용 숏폼 영상 제작에 최적화된 AI 플랫폼으로, 대본 작성부터 영상 편집, 
+  음성/자막 삽입까지 자동화되어 빠르고 간편하게 고품질 콘텐츠를 제작할 수 있는 영상 중심 AI 툴입니다.</p>
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const sidebar = document.querySelector('.sidebar');
+  const toggleBtn = document.createElement('button');
+  toggleBtn.id = 'toggleMenuBtn';
+  toggleBtn.textContent = '≡';
+  sidebar.insertBefore(toggleBtn, sidebar.firstChild);
+
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('collapsed');
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+      const toggleButton = document.getElementById("toggleRecentAI");
+      const recentBox = document.getElementById("recentBox");
+      toggleButton.addEventListener("click", function () {
+        recentBox.style.display = recentBox.style.display === "block" ? "none" : "block";
+        renderRecentlyViewed();
+      });
+    });
+    function renderRecentlyViewed() {
+      const recentList = document.getElementById("recentList");
+      const viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      if (viewed.length === 0) {
+        recentList.innerHTML = "<li>최근 본 AI가 없습니다.</li>";
+      } else {
+        recentList.innerHTML = viewed.map((item, index) =>
+          `<li><a href="${item.url}" onclick="saveRecentlyViewed('${item.name}', '${item.url}')">${item.name}</a>
+          <button onclick="removeRecentlyViewed(${index})">x</button></li>`
+        ).join("");
+      }
+    }
+    function saveRecentlyViewed(name, url) {
+      let viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      viewed = viewed.filter(item => item.name !== name);
+      viewed.unshift({ name, url });
+      if (viewed.length > 20) viewed = viewed.slice(0, 20);
+      localStorage.setItem("recentAIs", JSON.stringify(viewed));
+    }
+    function removeRecentlyViewed(index) {
+      let viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      viewed.splice(index, 1);
+      localStorage.setItem("recentAIs", JSON.stringify(viewed));
+      renderRecentlyViewed();
+    }
+</script>
+</body>
+</html>

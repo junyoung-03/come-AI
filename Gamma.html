@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>편하게 들어와 AI</title>
+  <link rel="stylesheet" href="nav.css">
+  <link rel="stylesheet" href="listcontants.css">
+</head>
+<body>
+  <div class="sidebar">
+    <ul>
+      <li><a href="index.html">🏠 홈</a></li>
+      <li><a href="list.html">📋 리스트</a></li>
+      <li><a href="rank.html">📈 랭킹</a></li>
+      <li><a href="recent.html">🕒 최신 AI</a></li>
+      <li>
+        <button id="toggleRecentAI">👀 최근 본 AI</button>
+        <div class="recent-list-wrapper" id="recentBox">
+          <ul id="recentList"></ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+
+<div class="link-card">
+  <a href="https://gamma.app/ko" target="_blank">🔗 Gamma 바로가기</a>
+</div>
+
+<div class="tab-menu">
+  <a href="#strength">장점</a>
+  <a href="#weakness">단점</a>
+  <a href="#difference">차별점</a>
+  <a href="#free-paid">무료/유료 차이 & 요약</a>
+</div>
+
+<div class="content-section">
+<div class="content-box" id="gamma-strength">
+  <h2>장점</h2>
+  <ol>
+    <li><strong>AI 기반 슬라이드 생성:</strong> 간단한 텍스트 입력만으로도 구조화된 슬라이드를 자동 생성</li>
+    <li><strong>인터랙티브한 디자인:</strong> 클릭, 전환 시 애니메이션 효과가 자연스럽고 몰입감 제공</li>
+    <li><strong>멀티미디어 지원:</strong> 이미지, 비디오, GIF 등 다양한 미디어 삽입이 쉬움</li>
+    <li><strong>웹 기반 협업:</strong> 실시간 협업 및 댓글 기능 제공으로 피드백과 수정이 간편</li>
+    <li><strong>직관적 인터페이스:</strong> 초보자도 쉽게 사용 가능한 UI/UX</li>
+  </ol>
+</div>
+
+<div class="content-box" id="gamma-weakness">
+  <h2>단점</h2>
+  <ol>
+    <li><strong>세밀한 커스터마이징 한계:</strong> 자동 생성에 최적화되어 있어 레이아웃이나 디자인 조정이 제한적</li>
+    <li><strong>오프라인 사용 불가:</strong> 인터넷 연결이 필수이며, 오프라인에서는 작업할 수 없음</li>
+    <li><strong>무료 기능 제한:</strong> 슬라이드 수, 프로젝트 수 제한이 있고 일부 기능은 유료</li>
+    <li><strong>한글 호환성 이슈:</strong> 한글 처리 및 폰트 호환에서 불편함이 발생할 수 있음</li>
+  </ol>
+</div>
+
+<div class="content-box" id="gamma-difference">
+  <h2>차별점</h2>
+  <ol>
+    <li><strong> AI 자동 구조화 및 디자인:</strong> 입력만 하면 AI가 내용을 분석해 슬라이드 구조와 디자인을 자동 완성</li>
+    <li><strong> 인터랙티브한 슬라이드:</strong> 자연스러운 전환 효과로 청중과 소통하는 발표 자료 제작 가능</li>
+    <li><strong> 웹 기반 실시간 협업:</strong> 링크 공유, 댓글, 실시간 편집 등 협업 기능 지원</li>
+    <li><strong> 멀티미디어 통합:</strong> 이미지, 동영상, 차트 삽입이 용이하여 발표 효과 극대화</li>
+    <li><strong> 사용자 친화적 UX:</strong> 누구나 쉽게 다룰 수 있는 쉬운 인터페이스 제공</li>
+  </ol>
+</div>
+
+<div class="content-box" id="gamma-free-paid">
+  <h2>무료/유료 차이 & 요약</h2>
+  <h3>무료 버전</h3>
+  <ul>
+    <li>기본 AI 슬라이드 생성 기능 제공</li>
+    <li>슬라이드 수, 프로젝트 수에 제한 있음</li>
+    <li>고급 템플릿, 인터랙션 기능 일부 제한</li>
+    <li>PDF, PPTX 내보내기 제한 또는 미지원</li>
+    <li>기본 협업은 가능하나 팀 단위 작업엔 부적합</li>
+  </ul>
+  <h3>유료 버전</h3>
+  <ul>
+    <li>슬라이드 및 프로젝트 수 무제한</li>
+    <li>AI 생성 콘텐츠 품질 향상</li>
+    <li>고급 템플릿, 인터랙션, 내보내기 기능 모두 이용 가능</li>
+    <li>실시간 협업, 권한 설정, 댓글 기능 등 팀 작업 최적화</li>
+    <li>우선 고객 지원 및 비즈니스 기능 포함</li>
+  </ul>
+  <h2>요약</h2>
+<p><strong>Gamma는</strong> <strong>AI가 자동 생성한 구조화된 슬라이드</strong>를 기반으로 
+  <strong>인터랙티브하고 몰입감 있는 발표</strong>를 가능하게 하는 <strong>웹 기반 프레젠테이션 툴</strong>입니다.</p>
+</div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const sidebar = document.querySelector('.sidebar');
+  const toggleBtn = document.createElement('button');
+  toggleBtn.id = 'toggleMenuBtn';
+  toggleBtn.textContent = '≡';
+  sidebar.insertBefore(toggleBtn, sidebar.firstChild);
+
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('collapsed');
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+      const toggleButton = document.getElementById("toggleRecentAI");
+      const recentBox = document.getElementById("recentBox");
+      toggleButton.addEventListener("click", function () {
+        recentBox.style.display = recentBox.style.display === "block" ? "none" : "block";
+        renderRecentlyViewed();
+      });
+    });
+    function renderRecentlyViewed() {
+      const recentList = document.getElementById("recentList");
+      const viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      if (viewed.length === 0) {
+        recentList.innerHTML = "<li>최근 본 AI가 없습니다.</li>";
+      } else {
+        recentList.innerHTML = viewed.map((item, index) =>
+          `<li><a href="${item.url}" onclick="saveRecentlyViewed('${item.name}', '${item.url}')">${item.name}</a>
+          <button onclick="removeRecentlyViewed(${index})">x</button></li>`
+        ).join("");
+      }
+    }
+    function saveRecentlyViewed(name, url) {
+      let viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      viewed = viewed.filter(item => item.name !== name);
+      viewed.unshift({ name, url });
+      if (viewed.length > 20) viewed = viewed.slice(0, 20);
+      localStorage.setItem("recentAIs", JSON.stringify(viewed));
+    }
+    function removeRecentlyViewed(index) {
+      let viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      viewed.splice(index, 1);
+      localStorage.setItem("recentAIs", JSON.stringify(viewed));
+      renderRecentlyViewed();
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>편하게 들어와 AI</title>
+  <link rel="stylesheet" href="nav.css">
+  <link rel="stylesheet" href="listcontants.css">
+</head>
+<body>
+  <div class="sidebar">
+    <ul>
+      <li><a href="index.html">🏠 홈</a></li>
+      <li><a href="list.html">📋 리스트</a></li>
+      <li><a href="rank.html">📈 랭킹</a></li>
+      <li><a href="recent.html">🕒 최신 AI</a></li>
+      <li>
+        <button id="toggleRecentAI">👀 최근 본 AI</button>
+        <div class="recent-list-wrapper" id="recentBox">
+          <ul id="recentList"></ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+<div class="link-card">
+  <a href="https://www.canva.com/ko_kr/" target="_blank">
+   
+    🔗 Canva 바로가기
+  </a>
+</div>
+
+<div class="tab-menu">
+    <a href="#strength">장점</a>
+    <a href="#weakness">단점</a>
+    <a href="#difference">  차별점 </a>
+    <a href="#free-paid">무료/유료 차이 & 요약</a>
+  </div>
+
+
+<div class="content-section">
+<div class="content-box" id="canva-strength">
+  <h2>장점</h2>
+  <ol>
+    <li><strong>간편한 사용성:</strong> 드래그 앤 드롭 방식으로 누구나 쉽게 디자인 가능</li>
+    <li><strong>풍부한 템플릿과 디자인 요소:</strong> 수천 개의 무료 및 유료 템플릿과 다양한 아이콘, 이미지, 폰트 활용 가능</li>
+    <li><strong>멀티미디어 통합:</strong> 이미지, 동영상, 오디오 삽입으로 동적 프레젠테이션 제작 가능</li>
+    <li><strong>웹 기반 협업 기능:</strong> 팀원과 실시간 공유, 편집, 피드백 가능</li>
+    <li><strong>다양한 출력 형식 지원:</strong> PDF, PPTX, JPG, PNG 등 여러 형식으로 내보내기 가능</li>
+  </ol>
+</div>
+
+<div class="content-box" id="canva-weakness">
+  <h2>단점</h2>
+  <ol>
+    <li><strong>디자인 자유도 제한:</strong> 템플릿 기반으로 세밀한 맞춤형 디자인이 어려움</li>
+    <li><strong>고급 애니메이션 부족:</strong> 전환 효과나 고급 슬라이드 기능이 PowerPoint 대비 제한적</li>
+    <li><strong>오프라인 작업 불가:</strong> 인터넷 연결이 반드시 필요</li>
+    <li><strong>무료 버전 기능 제한:</strong> 일부 프리미엄 콘텐츠 및 팀 협업 기능 제한</li>
+    <li><strong>한글 폰트 제한:</strong> 선택 가능한 한글 폰트가 적고 가독성이 떨어질 수 있음</li>
+  </ol>
+</div>
+
+<div class="content-box" id="canva-difference">
+  <h2>차별점</h2>
+  <ol>
+    <li><strong> 방대한 디자인 자원:</strong> 고품질 템플릿, 아이콘, 이미지, 폰트 등을 손쉽게 활용</li>
+    <li><strong> 실시간 협업 기능:</strong> 팀원과 동시에 디자인하고 피드백 교환 가능</li>
+    <li><strong>다양한 출력 형식 지원:</strong> 이미지, 영상, 문서 형식 모두 출력 가능</li>
+    <li><strong> 직관적인 UI:</strong> 초보자도 쉽게 사용할 수 있는 설계</li>
+    <li><strong> 모바일 앱 지원:</strong> 모바일 기기에서도 쉽게 편집 가능</li>
+  </ol>
+</div>
+
+<div class="content-box" id="canva-free-paid">
+  <h2>무료/유료 차이 & 요약 - Canva</h2>
+  <h3>무료 버전</h3>
+  <ul>
+    <li>수천 개의 무료 템플릿과 디자인 요소 사용 가능</li>
+    <li>기본적인 PPT 제작 및 내보내기 지원 (JPG, PNG, PDF)</li>
+    <li>기본 협업 기능 제공</li>
+    <li>프리미엄 콘텐츠 및 고급 디자인 도구는 사용 불가</li>
+  </ul>
+  <h3>유료 버전</h3>
+  <ul>
+    <li>모든 프리미엄 템플릿 및 디자인 자원 무제한 사용</li>
+    <li>브랜드 키트, 배경 제거, 애니메이션 등 고급 기능 지원</li>
+    <li>PPTX, 동영상 등 고화질 출력 가능</li>
+    <li>전문 협업 기능 (권한 관리, 디자인 공유 등) 포함</li>
+    <li>디자인 버전 관리 및 예약 게시 등 생산성 기능 제공</li>
+  </ul>
+  <h2>요약</h2>
+  <p><strong>Canva는</strong> <strong>간편하고 직관적인 디자인 툴</strong>로, <strong>템플릿 중심의 빠른 PPT 제작</strong>과 <strong>풍부한 시각 자원 활용</strong>이 강점인 <strong>웹 기반 프레젠테이션 플랫폼</strong>입니다.</p>
+</div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const sidebar = document.querySelector('.sidebar');
+  const toggleBtn = document.createElement('button');
+  toggleBtn.id = 'toggleMenuBtn';
+  toggleBtn.textContent = '≡';
+  sidebar.insertBefore(toggleBtn, sidebar.firstChild);
+
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('collapsed');
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+      const toggleButton = document.getElementById("toggleRecentAI");
+      const recentBox = document.getElementById("recentBox");
+      toggleButton.addEventListener("click", function () {
+        recentBox.style.display = recentBox.style.display === "block" ? "none" : "block";
+        renderRecentlyViewed();
+      });
+    });
+    function renderRecentlyViewed() {
+      const recentList = document.getElementById("recentList");
+      const viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      if (viewed.length === 0) {
+        recentList.innerHTML = "<li>최근 본 AI가 없습니다.</li>";
+      } else {
+        recentList.innerHTML = viewed.map((item, index) =>
+          `<li><a href="${item.url}" onclick="saveRecentlyViewed('${item.name}', '${item.url}')">${item.name}</a>
+          <button onclick="removeRecentlyViewed(${index})">x</button></li>`
+        ).join("");
+      }
+    }
+    function saveRecentlyViewed(name, url) {
+      let viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      viewed = viewed.filter(item => item.name !== name);
+      viewed.unshift({ name, url });
+      if (viewed.length > 20) viewed = viewed.slice(0, 20);
+      localStorage.setItem("recentAIs", JSON.stringify(viewed));
+    }
+    function removeRecentlyViewed(index) {
+      let viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      viewed.splice(index, 1);
+      localStorage.setItem("recentAIs", JSON.stringify(viewed));
+      renderRecentlyViewed();
+    }
+</script>
+</body>
+</html>

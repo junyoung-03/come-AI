@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>편하게 들어와 AI</title>
+  <link rel="stylesheet" href="nav.css">
+  <link rel="stylesheet" href="listcontants.css">
+</head>
+
+<body>
+  <div class="sidebar">
+    <ul>
+      <li><a href="index.html">🏠 홈</a></li>
+      <li><a href="list.html">📋 리스트</a></li>
+      <li><a href="rank.html">📈 랭킹</a></li>
+      <li><a href="recent.html">🕒 최신 AI</a></li>
+      <li>
+        <button id="toggleRecentAI">👀 최근 본 AI</button>
+        <div class="recent-list-wrapper" id="recentBox">
+          <ul id="recentList"></ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+ 
+
+<div class="link-card">
+  <a href="https://www.phind.com/" target="_blank">🔗 Phind (Phind AI) 바로가기</a>
+</div>
+
+<div class="tab-menu">
+    <a href="#strength">장점</a>
+    <a href="#weakness">단점</a>
+    <a href="#difference">차별점</a>
+    <a href="#free-paid">무료/유료 차이 & 요약 </a>
+</div>
+
+<div class="content-section">
+  <div class="content-box" id="strength">
+  <h2>장점</h2>
+  <ol>
+    <li><strong>개발자 중심 인터페이스:</strong> Phind는 코딩에 특화된 Q&A 기반의 AI 검색 플랫폼</li>
+    <li><strong>코드 중심 응답:</strong> 검색 결과와 함께 코드 예시를 직접 제시해줌</li>
+    <li><strong>GPT-4 Turbo 기반:</strong> OpenAI 최신 모델을 기반으로 빠르고 정확한 응답 제공</li>
+    <li><strong>인앱 편집 및 복사 기능 강화:</strong> 코드 블록 편집, 복사 기능이 직관적</li>
+    <li><strong>브라우저 내 검색 최적화:</strong> 검색 엔진이 아닌 코딩 레퍼런스 중심 결과 제공</li>
+  </ol>
+</div>
+
+<div class="content-box" id="weakness">
+  <h2>단점</h2>
+  <ol>
+    <li><strong>일반 정보 검색에는 부적합:</strong> 코딩/기술 외 검색은 정확도 떨어짐</li>
+    <li><strong>한글 검색 지원 약함:</strong> 영어 기반 검색어 입력이 더 적합</li>
+    <li><strong>AI 응답 커스터마이징 어려움:</strong> 프롬프트 조정 기능이 단순함</li>
+    <li><strong>모바일 환경 미지원:</strong> 데스크탑 브라우저 최적화 중심</li>
+    <li><strong>정확도 편차 있음:</strong> 복잡한 개발 환경 질문에는 누락되거나 오류 응답 가능</li>
+  </ol>
+</div>
+
+<div class="content-box" id="difference">
+  <h2>차별점</h2>
+  <ol>
+    <li><strong>검색+코딩 특화 결합:</strong> 검색 결과에 코드 예제를 바로 생성해주는 구조</li>
+    <li><strong>Stack Overflow 대체 목표:</strong> 커뮤니티 답변 대신 AI가 문서화된 코드 제공</li>
+    <li><strong>빠른 복붙 중심 인터페이스:</strong> 코드 활용을 위한 클립보드 중심 UI</li>
+    <li><strong>한 질문에 대한 요약된 요점 정리:</strong> 여러 소스를 기반으로 핵심 요약 제공</li>
+    <li><strong>웹 브라우저 기반 통합 툴:</strong> 검색창과 챗봇이 통합된 단일 페이지 환경</li>
+  </ol>
+</div>
+
+<div class="content-box" id="free-paid">
+   <h2>무료/유료 차이 & 요약</h2>
+  <h3>무료 버전</h3>
+  <ul>
+    <li>일부 모델(GPT-3.5) 기반으로 검색 및 코드 생성 가능</li>
+    <li>검색 기록 저장 및 다크모드 UI 제공</li>
+    <li>기초적인 코드 질문 및 웹 기반 검색 가능</li>
+  </ul>
+
+  <h3>유료 버전 (Phind Pro)</h3>
+  <ul>
+    <li>GPT-4 Turbo 모델 기반 응답 제공</li>
+    <li>더 빠른 응답 시간과 고정확도 코드 응답</li>
+    <li>복잡한 멀티파일 코드 생성, API 문서 분석 기능 포함</li>
+    <li>코드 설명 및 오류 수정에 대한 심층 지원</li>
+  </ul>
+
+  <h2>요약</h2>
+<p><strong>Phind는</strong> <strong>검색+코딩을 결합한 AI 도구</strong>로,
+   <strong>GPT-4 기반 코드 생성, 문서 검색 요약, 빠른 복사/활용 중심 인터페이스</strong>를 갖춘 개발자 전용 AI 검색 도구입니다.</p>
+   </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const sidebar = document.querySelector('.sidebar');
+  const toggleBtn = document.createElement('button');
+  toggleBtn.id = 'toggleMenuBtn';
+  toggleBtn.textContent = '≡';
+  sidebar.insertBefore(toggleBtn, sidebar.firstChild);
+
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('collapsed');
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+      const toggleButton = document.getElementById("toggleRecentAI");
+      const recentBox = document.getElementById("recentBox");
+      toggleButton.addEventListener("click", function () {
+        recentBox.style.display = recentBox.style.display === "block" ? "none" : "block";
+        renderRecentlyViewed();
+      });
+    });
+    function renderRecentlyViewed() {
+      const recentList = document.getElementById("recentList");
+      const viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      if (viewed.length === 0) {
+        recentList.innerHTML = "<li>최근 본 AI가 없습니다.</li>";
+      } else {
+        recentList.innerHTML = viewed.map((item, index) =>
+          `<li><a href="${item.url}" onclick="saveRecentlyViewed('${item.name}', '${item.url}')">${item.name}</a>
+          <button onclick="removeRecentlyViewed(${index})">x</button></li>`
+        ).join("");
+      }
+    }
+    function saveRecentlyViewed(name, url) {
+      let viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      viewed = viewed.filter(item => item.name !== name);
+      viewed.unshift({ name, url });
+      if (viewed.length > 20) viewed = viewed.slice(0, 20);
+      localStorage.setItem("recentAIs", JSON.stringify(viewed));
+    }
+    function removeRecentlyViewed(index) {
+      let viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      viewed.splice(index, 1);
+      localStorage.setItem("recentAIs", JSON.stringify(viewed));
+      renderRecentlyViewed();
+    }
+</script>
+</body>
+</html>

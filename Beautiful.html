@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>편하게 들어와 AI</title>
+  <link rel="stylesheet" href="nav.css">
+  <link rel="stylesheet" href="listcontants.css">
+</head>
+<body>
+  <div class="sidebar">
+    <ul>
+      <li><a href="index.html">🏠 홈</a></li>
+      <li><a href="list.html">📋 리스트</a></li>
+      <li><a href="rank.html">📈 랭킹</a></li>
+      <li><a href="recent.html">🕒 최신 AI</a></li>
+      <li>
+        <button id="toggleRecentAI">👀 최근 본 AI</button>
+        <div class="recent-list-wrapper" id="recentBox">
+          <ul id="recentList"></ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+ 
+<div class="link-card">
+  <a href="https://www.beautiful.ai/" target="_blank">🔗 Beautiful.ai 바로가기</a>
+</div>
+
+ 
+<div class="tab-menu">
+  <a href="#strength">장점</a>
+  <a href="#weakness">단점</a>
+  <a href="#difference">차별점</a>
+  <a href="#free-paid">무료/유료 차이 & 요약</a>
+</div>
+
+<div class="content-section">
+ <div class="content-box" id="strength">
+  <h2>장점</h2>
+  <ol>
+    <li><strong>자동 디자인 기능:</strong> 콘텐츠만 입력하면 슬라이드 디자인을 자동으로 정리해주며, 여백, 정렬, 아이콘 크기를 AI가 조정해 일관된 품질을 유지합니다.</li>
+    <li><strong>고급 템플릿과 애니메이션:</strong> 미리 디자인된 세련된 템플릿과 자연스러운 모션 효과로 비디자이너도 전문가처럼 작업 가능합니다.</li>
+    <li><strong>실시간 협업:</strong> 팀원들과 실시간 공동 작업 가능하며, 주석과 수정 기록 기능이 포함되어 팀 프로젝트에 적합합니다.</li>
+    <li><strong>웹 기반 클라우드 저장:</strong> 설치 없이 브라우저에서 작업 가능하며, 자동 저장과 링크 공유로 파일 분실 걱정이 없습니다.</li>
+    <li><strong>빠른 작업 속도:</strong> 슬라이드를 직접 구성하지 않아도 되어 제작 시간이 대폭 단축됩니다.</li>
+  </ol>
+</div>
+
+<div class="content-box" id="weakness">
+  <h2>단점</h2>
+  <ol>
+    <li><strong>커스터마이징 제약:</strong> 자동 디자인으로 인해 세세한 레이아웃 수정이 어렵고, PowerPoint처럼 자유로운 구성이 불편할 수 있습니다.</li>
+    <li><strong>한글 지원 미흡:</strong> 한글 폰트, 자간, 줄 간격 처리에서 오류가 발생하거나 미려하지 않은 경우가 있어 영문에 최적화되어 있습니다.</li>
+    <li><strong>무료 기능 제한:</strong> 템플릿, 내보내기, 협업 인원 수에 제한이 있으며, 고급 기능은 유료 결제가 필요합니다.</li>
+    <li><strong>오프라인 작업 불가:</strong> 인터넷 연결이 필수이며, 출장이나 비행기 등 오프라인 상황에서는 사용이 어렵습니다.</li>
+  </ol>
+</div>
+
+<div class="content-box" id="difference">
+  <h2>차별점</h2>
+  <ol>
+    <li><strong> AI 기반 자동 디자인:</strong> 텍스트나 이미지만 넣으면 AI가 레이아웃, 정렬 등을 자동 조정해 디자인에 대한 고민 없이 콘텐츠에 집중할 수 있습니다.</li>
+    <li><strong> Smart Templates:</strong> 슬라이드를 디자인 규칙에 따라 자동으로 최적화하며, 텍스트 길이 변화에도 일관성 유지가 가능합니다.</li>
+    <li><strong> 빠른 제작:</strong> 콘텐츠 입력만으로 발표용 슬라이드가 자동 생성되어, 디자이너 없이도 5~10분 내에 완성 가능합니다.</li>
+  </ol>
+</div>
+
+<div class="content-box" id="free-paid">
+  <h2>무료/유료 차이 & 요약</h2>
+  <h3>무료 버전</h3>
+  <ul>
+    <li>기본적인 스마트 템플릿 제공</li>
+    <li>온라인 전용, PDF/PPTX 내보내기 불가</li>
+    <li>이미지 및 아이콘 사용 제한</li>
+    <li>협업 기능 및 브랜드 설정 불가</li>
+    <li>개인 사용자나 연습용으로 적합</li>
+  </ul>
+  <h3>유료 버전</h3>
+  <ul>
+    <li>고급 템플릿 및 디자인 리소스 무제한 사용</li>
+    <li>PDF, PPTX 형식으로 고품질 다운로드 가능</li>
+    <li>브랜드 로고, 색상, 폰트 설정 가능</li>
+    <li>팀 단위 실시간 협업, 댓글 기능 지원</li>
+    <li>발표 빈도가 많거나 문서 퀄리티가 중요한 팀에 적합</li>
+  </ul>
+  <h2>요약</h2>
+  <p><strong>Beautiful.ai는</strong> <strong>AI 기반 자동 디자인과 Smart Template 기능</strong>으로 <strong>빠르게 고품질 슬라이드를 제작</strong>할 수 있도록 도와주는 <strong>웹 기반 프레젠테이션 도구</strong>입니다.</p>
+</div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const sidebar = document.querySelector('.sidebar');
+  const toggleBtn = document.createElement('button');
+  toggleBtn.id = 'toggleMenuBtn';
+  toggleBtn.textContent = '≡';
+  sidebar.insertBefore(toggleBtn, sidebar.firstChild);
+
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('collapsed');
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+      const toggleButton = document.getElementById("toggleRecentAI");
+      const recentBox = document.getElementById("recentBox");
+      toggleButton.addEventListener("click", function () {
+        recentBox.style.display = recentBox.style.display === "block" ? "none" : "block";
+        renderRecentlyViewed();
+      });
+    });
+    function renderRecentlyViewed() {
+      const recentList = document.getElementById("recentList");
+      const viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      if (viewed.length === 0) {
+        recentList.innerHTML = "<li>최근 본 AI가 없습니다.</li>";
+      } else {
+        recentList.innerHTML = viewed.map((item, index) =>
+          `<li><a href="${item.url}" onclick="saveRecentlyViewed('${item.name}', '${item.url}')">${item.name}</a>
+          <button onclick="removeRecentlyViewed(${index})">x</button></li>`
+        ).join("");
+      }
+    }
+    function saveRecentlyViewed(name, url) {
+      let viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      viewed = viewed.filter(item => item.name !== name);
+      viewed.unshift({ name, url });
+      if (viewed.length > 20) viewed = viewed.slice(0, 20);
+      localStorage.setItem("recentAIs", JSON.stringify(viewed));
+    }
+    function removeRecentlyViewed(index) {
+      let viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      viewed.splice(index, 1);
+      localStorage.setItem("recentAIs", JSON.stringify(viewed));
+      renderRecentlyViewed();
+    }
+</script>
+</body>
+</html>

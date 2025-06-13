@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>편하게 들어와 AI</title>
+  <link rel="stylesheet" href="nav.css">
+  <link rel="stylesheet" href="listcontants.css">
+</head>
+
+<body>
+  <div class="sidebar">
+    <ul>
+      <li><a href="index.html">🏠 홈</a></li>
+      <li><a href="list.html">📋 리스트</a></li>
+      <li><a href="rank.html">📈 랭킹</a></li>
+      <li><a href="recent.html">🕒 최신 AI</a></li>
+      <li>
+        <button id="toggleRecentAI">👀 최근 본 AI</button>
+        <div class="recent-list-wrapper" id="recentBox">
+          <ul id="recentList"></ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+
+<div class="link-card">
+  <a href="https://chat.qwen.ai/" target="_blank">🔗 Qwen 3 바로가기</a>
+</div>
+
+<div class="tab-menu">
+    <a href="#strength">장점</a>
+    <a href="#weakness">단점</a>
+    <a href="#difference">차별점</a>
+    <a href="#free-paid">무료/유료 차이 & 요약 </a>
+</div>
+
+<div class="content-section">
+   <div class="content-box" id="strength">
+    <h2>장점</h2>
+    <ol>
+      <li><strong>Qwen 3 모델 도입:</strong> 대규모 문맥 처리, 고속 응답, 창의적 생성력 강화</li>
+      <li><strong>중국어 및 다국어 성능 우수:</strong> 특히 중국어 기반 자연어 이해 능력 탁월</li>
+      <li><strong>오픈소스 공개:</strong> Qwen1.5 및 Qwen-72B 등 다양한 모델 계열 무료 배포</li>
+      <li><strong>다양한 파인튜닝 모델 제공:</strong> 코드, 수학, 멀티모달 전용 버전 포함</li>
+      <li><strong>Alibaba Cloud와 통합:</strong> 기업용 API 및 솔루션으로 확장성 뛰어남</li>
+    </ol>
+  </div>
+
+  <div class="content-box" id="weakness">
+    <h2>단점</h2>
+    <ol>
+      <li><strong>한국어 품질은 제한적:</strong> 중국어와 영어 외 언어에선 자연스러움이 낮을 수 있음</li>
+      <li><strong>웹 기반 사용 어려움:</strong> 직접 서비스보다는 API/오픈소스 중심 배포</li>
+      <li><strong>UI/UX 환경 부재:</strong> 일반 사용자용 챗봇 인터페이스 부족</li>
+      <li><strong>고급 창작 작업은 약세:</strong> 창의적 글쓰기나 스타일 표현은 GPT-4 대비 미흡</li>
+      <li><strong>중국 외 인지도 낮음:</strong> 글로벌 사용자층 확대는 초기 단계</li>
+    </ol>
+  </div>
+
+  <div class="content-box" id="difference">
+    <h2>차별점</h2>
+    <ol>
+      <li><strong>Alibaba 그룹 개발:</strong> 세계적인 기술력을 가진 중국 빅테크의 LLM 프로젝트</li>
+      <li><strong>Qwen 1.5 계열 공개:</strong> 최대 72B 파라미터의 모델을 무료로 배포</li>
+      <li><strong>코딩 및 수학 성능 강화:</strong> 전문 파인튜닝 모델로 실용적 활용 높음</li>
+      <li><strong>엔터프라이즈 중심 전략:</strong> 클라우드, API, 산업형 연계 구조 탁월</li>
+      <li><strong>고속 경량화 모델 병행 제공:</strong> 스마트폰에서도 구동 가능한 라이트 모델 포함</li>
+    </ol>
+  </div>
+
+  <div class="content-box" id="free-paid">
+    <h2>무료/유료 차이 & 요약</h2>
+    <h3>무료 버전</h3>
+    <ul>
+      <li>Qwen 1.5 계열 모델 GitHub에서 무료 공개</li>
+      <li>개발자용 API, 로컬 테스트용 모델 활용 가능</li>
+      <li>문서 요약, 질의응답, 코드 생성 등 주요 기능 포함</li>
+    </ul>
+    <h3>유료/상용 버전</h3>
+    <ul>
+      <li>Alibaba Cloud 기반 API 상용 플랜 제공</li>
+      <li>기업 전용 커스터마이징 가능</li>
+      <li>멀티모달, 코드, 보안 강화 옵션 포함</li>
+    </ul>
+    <h2>요약</h2>
+  <p>Qwen 3는 Alibaba가 개발한 고성능 생성형 AI로, 오픈소스 공개와 중국어 최적화, 코드/수학/멀티모달에 특화된 파인튜닝 모델을 바탕으로 연구자와 기업에 적합한 범용 LLM 솔루션을 제공합니다.</p>
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const sidebar = document.querySelector('.sidebar');
+  const toggleBtn = document.createElement('button');
+  toggleBtn.id = 'toggleMenuBtn';
+  toggleBtn.textContent = '≡';
+  sidebar.insertBefore(toggleBtn, sidebar.firstChild);
+
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('collapsed');
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+      const toggleButton = document.getElementById("toggleRecentAI");
+      const recentBox = document.getElementById("recentBox");
+      toggleButton.addEventListener("click", function () {
+        recentBox.style.display = recentBox.style.display === "block" ? "none" : "block";
+        renderRecentlyViewed();
+      });
+    });
+    function renderRecentlyViewed() {
+      const recentList = document.getElementById("recentList");
+      const viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      if (viewed.length === 0) {
+        recentList.innerHTML = "<li>최근 본 AI가 없습니다.</li>";
+      } else {
+        recentList.innerHTML = viewed.map((item, index) =>
+          `<li><a href="${item.url}" onclick="saveRecentlyViewed('${item.name}', '${item.url}')">${item.name}</a>
+          <button onclick="removeRecentlyViewed(${index})">x</button></li>`
+        ).join("");
+      }
+    }
+    function saveRecentlyViewed(name, url) {
+      let viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      viewed = viewed.filter(item => item.name !== name);
+      viewed.unshift({ name, url });
+      if (viewed.length > 20) viewed = viewed.slice(0, 20);
+      localStorage.setItem("recentAIs", JSON.stringify(viewed));
+    }
+    function removeRecentlyViewed(index) {
+      let viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      viewed.splice(index, 1);
+      localStorage.setItem("recentAIs", JSON.stringify(viewed));
+      renderRecentlyViewed();
+    }
+</script>
+</body>
+</html>

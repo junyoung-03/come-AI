@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>편하게 들어와 AI</title>
+  <link rel="stylesheet" href="nav.css">
+  <link rel="stylesheet" href="listcontants.css">
+</head>
+<body>
+  <div class="sidebar">
+    <ul>
+      <li><a href="index.html">🏠 홈</a></li>
+      <li><a href="list.html">📋 리스트</a></li>
+      <li><a href="rank.html">📈 랭킹</a></li>
+      <li><a href="recent.html">🕒 최신 AI</a></li>
+      <li>
+        <button id="toggleRecentAI">👀 최근 본 AI</button>
+        <div class="recent-list-wrapper" id="recentBox">
+          <ul id="recentList"></ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+
+<div class="link-card">
+  <a href="https://github.com/features/copilot" target="_blank">🔗 Github copilot 바로가기</a>
+</div>
+
+<div class="tab-menu">
+    <a href="#strength">장점</a>
+    <a href="#weakness">단점</a>
+    <a href="#difference">  차별점 </a>
+    <a href="#free-paid">무료/유료 차이 & 요약</a>
+  </div>
+
+
+<div class="content-section">
+  <div class="content-box" id="copilot-dev-strength">
+  <h2>장점 </h2>
+  <ol>
+    <li><strong>코드 자동 완성:</strong> 함수, 블록, 주석 등 실시간 코드 제안으로 개발 속도 향상</li>
+    <li><strong>다양한 언어 지원:</strong> Python, JavaScript, Java, C++ 등 폭넓은 언어 대응</li>
+    <li><strong>복잡한 코드 생성 지원:</strong> 반복적 코드부터 알고리즘까지 다양한 코드 작성 가능</li>
+    <li><strong>IDE 통합:</strong> VS Code, JetBrains 등 인기 IDE에 플러그인 형태로 손쉽게 사용</li>
+    <li><strong>학습/문서화 지원:</strong> 주석 및 코드 설명 생성으로 이해도 및 문서화 용이</li>
+  </ol>
+</div>
+<div class="content-box" id="copilot-dev-weakness">
+  <h2>단점</h2>
+  <ol>
+    <li><strong>코드 정확도 불안:</strong> 제안된 코드에 오류가 있을 수 있어 검토 필수</li>
+    <li><strong>보안 및 라이선스 이슈:</strong> 학습 데이터에 따라 오픈소스 충돌 가능성 존재</li>
+    <li><strong>비용 부담:</strong> 무료 체험 이후 유료 구독 필요</li>
+    <li><strong>과의존 우려:</strong> 문제 해결력 저하 및 실력 저하 우려</li>
+    <li><strong>복잡한 맥락 한계:</strong> 대규모 프로젝트에서는 제한적인 제안 가능성</li>
+  </ol>
+</div>
+<div class="content-box" id="copilot-dev-difference">
+  <h2>차별점 </h2>
+  <ol>
+    <li><strong> GitHub 통합:</strong> Actions, PR 등 GitHub 워크플로우와 자연스럽게 연동</li>
+    <li><strong> Codex 기반:</strong> OpenAI Codex 모델로 복잡한 함수도 생성 가능한 고성능 AI</li>
+    <li><strong> IDE 지원 다양:</strong> VS Code, JetBrains, Neovim 등 주요 IDE 지원</li>
+    <li><strong> 코드 맥락 이해:</strong> 주변 코드 문맥을 파악하여 연속된 코드 자동 생성</li>
+    <li><strong> 다국어 언어 지원:</strong> 다양한 언어 및 문서 주석 자동화까지 지원</li>
+  </ol>
+</div>
+<div class="content-box" id="copilot-dev-free-paid">
+  <h2>무료/유료 차이 & 요약 </h2>
+  <h3>무료 버전</h3>
+  <ul>
+    <li>월 최대 2,000회 코드 완성 사용 가능</li>
+    <li>Copilot Chat 월 최대 50회 제한 제공</li>
+    <li>기본 AI 모델만 접근 가능</li>
+    <li>개인 개발자, 오픈소스 기여자, 학생 등 대상</li>
+  </ul>
+  <h3>유료 버전</h3>
+  <ul>
+    <li>코드 자동완성 및 Copilot Chat 무제한 사용</li>
+    <li>GPT-4.1, Claude 등 고급 모델 선택 가능</li>
+    <li>코딩 에이전트, 프로젝트 규모 대응 가능</li>
+    <li>팀/기업 단위 고급 지원 및 안정적 서비스 제공</li>
+  </ul>
+  <h2>요약</h2>
+<p><strong>GitHub Copilot은</strong> <strong>실시간 코드 자동완성과 다양한 언어/IDE 지원</strong>을 통해 <strong>개발 생산성을 획기적으로 높여주는 AI 코딩 파트너</strong>입니다.</a>
+</p>
+</div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const sidebar = document.querySelector('.sidebar');
+  const toggleBtn = document.createElement('button');
+  toggleBtn.id = 'toggleMenuBtn';
+  toggleBtn.textContent = '≡';
+  sidebar.insertBefore(toggleBtn, sidebar.firstChild);
+
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('collapsed');
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+      const toggleButton = document.getElementById("toggleRecentAI");
+      const recentBox = document.getElementById("recentBox");
+      toggleButton.addEventListener("click", function () {
+        recentBox.style.display = recentBox.style.display === "block" ? "none" : "block";
+        renderRecentlyViewed();
+      });
+    });
+    function renderRecentlyViewed() {
+      const recentList = document.getElementById("recentList");
+      const viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      if (viewed.length === 0) {
+        recentList.innerHTML = "<li>최근 본 AI가 없습니다.</li>";
+      } else {
+        recentList.innerHTML = viewed.map((item, index) =>
+          `<li><a href="${item.url}" onclick="saveRecentlyViewed('${item.name}', '${item.url}')">${item.name}</a>
+          <button onclick="removeRecentlyViewed(${index})">x</button></li>`
+        ).join("");
+      }
+    }
+    function saveRecentlyViewed(name, url) {
+      let viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      viewed = viewed.filter(item => item.name !== name);
+      viewed.unshift({ name, url });
+      if (viewed.length > 20) viewed = viewed.slice(0, 20);
+      localStorage.setItem("recentAIs", JSON.stringify(viewed));
+    }
+    function removeRecentlyViewed(index) {
+      let viewed = JSON.parse(localStorage.getItem("recentAIs") || "[]");
+      viewed.splice(index, 1);
+      localStorage.setItem("recentAIs", JSON.stringify(viewed));
+      renderRecentlyViewed();
+    }
+</script>
+</body>
+</html>
